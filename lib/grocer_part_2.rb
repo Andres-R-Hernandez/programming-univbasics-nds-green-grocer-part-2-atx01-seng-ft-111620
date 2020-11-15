@@ -10,9 +10,8 @@ def apply_coupons(cart, coupons)
   coupon_items = []
   coupons.each do |coupon_item|
     cart.each do |cart_item|
-      temp = {}
       if cart_item[:name] == coupon_item[:name]
-        temp =
+        coupon_items <<
         {
         :item => cart_item[:item] + " W/COUPON",
         :price => coupon_item[:cost] / coupon_item[:num],
@@ -20,7 +19,6 @@ def apply_coupons(cart, coupons)
         :count => cart_item[:count] - (cart_item[:count] % coupon_item[:num]),
         }
         cart_item[:count] = cart_item[:count] % coupon_item[:num]
-        coupon_items << temp
       end
     end
   end
