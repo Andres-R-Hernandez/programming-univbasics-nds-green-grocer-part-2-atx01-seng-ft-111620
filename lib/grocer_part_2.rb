@@ -56,9 +56,9 @@ def checkout(cart, coupons)
   end
 
   grand total
-  
+
   end
-    
+
 
 
 end
