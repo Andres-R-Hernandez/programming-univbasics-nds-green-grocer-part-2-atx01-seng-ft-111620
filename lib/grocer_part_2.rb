@@ -42,7 +42,7 @@ def apply_coupons(cart, coupons)
 
 
 
-  temp.each do |item|
+  coupon_items.each do |item|
     cart << item
   end
 
