@@ -40,8 +40,6 @@ def apply_coupons(cart, coupons)
     end
   end
 
-
-
   coupon_items.each do |item|
     cart << item
   end
