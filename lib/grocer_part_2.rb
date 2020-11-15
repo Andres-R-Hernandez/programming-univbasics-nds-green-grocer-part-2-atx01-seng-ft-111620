@@ -5,10 +5,11 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
 
-=begin
+
+#=begin
   coupon_items = []
-  cart.each do |cart_item|
-    coupons.each do |coupon_item|
+  coupons.each do |coupon_item|
+    cart.each do |cart_item|
       temp = {}
       if cart_item[:name] == coupon_item[:name]
         temp =
@@ -23,8 +24,10 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-=end
+#=end
 
+
+=begin
   coupon_items = cart.each_with_object([]) do |cart_item,temp|
     coupons.each do |coupon_item|
       if cart_item[:name] == coupon_item[:name]
@@ -39,6 +42,8 @@ def apply_coupons(cart, coupons)
       end
     end
   end
+=end
+
 
   p coupon_items
 
