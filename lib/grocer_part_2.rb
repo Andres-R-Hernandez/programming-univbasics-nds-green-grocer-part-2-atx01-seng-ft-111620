@@ -48,6 +48,7 @@ def checkout(cart, coupons)
 
   total = 0
   apply_clearance(apply_coupons(consolidate_cart(cart), coupons)).each do |item|
+  end
 
   if total > 100
     grand total = (total * 0.9).round(2)
@@ -56,9 +57,5 @@ def checkout(cart, coupons)
   end
 
   grand total
-
-  end
-
-
 
 end
