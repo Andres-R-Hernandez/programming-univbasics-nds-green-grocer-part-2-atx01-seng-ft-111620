@@ -57,6 +57,7 @@ def apply_coupons(cart, coupons)
         }
 
         cart_item[:count] = cart_item[:count] % coupon_item[:num]
+
         temp << cart_item
         temp << new_cart_item
       else
@@ -69,7 +70,7 @@ def apply_coupons(cart, coupons)
     item[:count] == 0
   end
 
-  new_cart
+  p new_cart
 #=end
 
 
