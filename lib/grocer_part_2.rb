@@ -8,22 +8,15 @@ def apply_coupons(cart, coupons)
   cart.each do |cart_item|
     coupons.each do |coupon_item|
       if cart_item == coupon_item
-        coupon_item[:num]
-        coupon_item[:cost]
-        cart_item[:count]
-
         new_cart_item = cart_item
         new_cart_item[:item] = cart_item[:item] + " W/COUPON"
         new_cart_item[:count] = cart_item[:count] / coupon_item[:num]
         new_cart_item[:price] = coupon_item[:price] / coupon_item[:num]
         cart << new_cart_item
-
         cart_item[:count] = cart_item[:count] % coupon_item[:num]
-
-
-
       end
     end
+    cart
   end
 
 
