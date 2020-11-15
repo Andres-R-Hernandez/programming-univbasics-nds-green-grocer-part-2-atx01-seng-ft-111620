@@ -4,6 +4,8 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+
+=begin
   coupon_items = []
   cart.each do |cart_item|
     coupons.each do |coupon_item|
@@ -21,6 +23,24 @@ def apply_coupons(cart, coupons)
       end
     end
   end
+=end
+
+  cart.each_with_object([]) do |cart_item,coupon_items|
+    coupons.each do |coupon_item|
+      if cart_item[:name] == coupon_item[:name]
+        coupon_items << 
+        {
+        :item => cart_item[:item] + " W/COUPON",
+        :price => coupon_item[:cost] / coupon_item[:num],
+        :clearance => cart_item[:clearance],
+        :count => cart_item[:count] - (cart_item[:count] % coupon_item[:num]),
+        }
+        cart_item[:count] = cart_item[:count] % coupon_item[:num]
+      end
+    end
+  end
+
+
 
   coupon_items.each do |item|
     cart << item
