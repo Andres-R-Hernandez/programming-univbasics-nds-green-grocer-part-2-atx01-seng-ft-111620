@@ -6,6 +6,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupon_items = []
   cart.each do |cart_item|
+    new_cart_item = {}
     coupons.each do |coupon_item|
       if cart_item[:name] == coupon_item[:name]
         new_cart_item =
