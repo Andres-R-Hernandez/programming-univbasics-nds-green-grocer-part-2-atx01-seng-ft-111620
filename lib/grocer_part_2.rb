@@ -4,6 +4,22 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+
+  cart.each do |cart_item|
+    coupons.each do |coupon_item|
+      if cart_item == coupon_item
+        coupon_item[:num]
+        coupon_item[:cost]
+        cart_item[:count]
+
+
+
+
+      end
+    end
+  end
+
+
 end
 
 def apply_clearance(cart)
