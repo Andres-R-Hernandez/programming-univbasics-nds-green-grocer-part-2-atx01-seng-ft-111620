@@ -40,6 +40,7 @@ def apply_coupons(cart, coupons)
     end
   end
 
+p coupon_items
 
   coupon_items.each do |item|
     cart << item
