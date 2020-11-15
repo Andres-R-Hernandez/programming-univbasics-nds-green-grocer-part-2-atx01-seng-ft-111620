@@ -52,11 +52,11 @@ def checkout(cart, coupons)
   end
 
   if total > 100
-    grand total = (total * 0.9).round(2)
+    grand_total = (total * 0.9).round(2)
   else
-    grand total = total
+    grand_total = total
   end
 
-  grand total
+  grand_total
 
 end
