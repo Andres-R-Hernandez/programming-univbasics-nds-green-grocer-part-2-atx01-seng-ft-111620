@@ -16,10 +16,10 @@ def apply_coupons(cart, coupons)
         :clearance => cart_item[:clearance];
         :count => cart_item[:count] / coupon_item[:num];
         }
-        
+
         cart << new_cart_item
         cart_item[:count] = cart_item[:count] % coupon_item[:num]
-        
+
       end
     end
   end
