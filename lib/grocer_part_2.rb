@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons)
   end
 =end
 
-  p coupon_items = cart.each_with_object([]) do |cart_item,temp|
+  coupon_items = cart.each_with_object([]) do |cart_item,temp|
     coupons.each do |coupon_item|
       if cart_item[:name] == coupon_item[:name]
         temp <<
