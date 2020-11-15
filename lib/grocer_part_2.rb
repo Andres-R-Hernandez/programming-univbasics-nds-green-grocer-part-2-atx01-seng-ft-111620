@@ -6,7 +6,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
 
 
-#=begin
+=begin
   coupon_items = []
   coupons.each do |coupon_item|
     cart.each do |cart_item|
@@ -22,15 +22,14 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-#=end
+=end
 
 
 =begin
   coupon_items = cart.each_with_object([]) do |cart_item,temp|
     coupons.each do |coupon_item|
       if cart_item[:name] == coupon_item[:name]
-        temp <<
-        {
+        temp << {
         :item => cart_item[:item] + " W/COUPON",
         :price => coupon_item[:cost] / coupon_item[:num],
         :clearance => cart_item[:clearance],
@@ -40,16 +39,33 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-=end
-
-
-  p coupon_items
-
   coupon_items.each do |item|
     cart << item
   end
+  cart
+=end
 
-  p cart
+#=begin
+  new_cart = cart.each_with_object([]) do |cart_item,temp|
+    
+    coupons.each do |coupon_item|
+
+      if cart_item[:name] == coupon_item[:name]
+
+        new_cart_item = {
+        :item => cart_item[:item] + " W/COUPON",
+        :price => coupon_item[:cost] / coupon_item[:num],
+        :clearance => cart_item[:clearance],
+        :count => cart_item[:count] - (cart_item[:count] % coupon_item[:num]),
+        }
+
+        cart_item[:count] = cart_item[:count] % coupon_item[:num]
+
+      end
+    end
+  end
+#=end
+
 end
 
 def apply_clearance(cart)
