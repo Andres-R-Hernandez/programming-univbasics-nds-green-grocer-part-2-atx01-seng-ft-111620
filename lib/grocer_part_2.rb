@@ -66,9 +66,7 @@ def apply_coupons(cart, coupons)
     end
   end
 
-  new_cart.delete_if do |item|
-    item[:count] == 0
-  end
+
 
   p new_cart
 #=end
