@@ -44,7 +44,7 @@ def apply_coupons(cart, coupons)
     cart << item
   end
 
-p cart
+  p cart
 end
 
 def apply_clearance(cart)
