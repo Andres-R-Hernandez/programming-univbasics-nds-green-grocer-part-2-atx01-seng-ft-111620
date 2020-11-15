@@ -6,10 +6,9 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupon_items = []
   cart.each do |cart_item|
-    new_cart_item = {}
     coupons.each do |coupon_item|
       if cart_item[:name] == coupon_item[:name]
-        new_cart_item =
+        coupon_items <<
         {
         :item => cart_item[:item] + " W/COUPON",
         :price => coupon_item[:cost] / coupon_item[:num],
@@ -17,7 +16,6 @@ def apply_coupons(cart, coupons)
         :count => cart_item[:count] - (cart_item[:count] % coupon_item[:num]),
         }
         cart_item[:count] = cart_item[:count] % coupon_item[:num]
-        coupon_items << new_cart_item
       end
     end
   end
